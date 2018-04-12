@@ -18,6 +18,9 @@ Text!""")
 g.add_edge('foo', 'foo1', label="EDGE!", width="3.0", color="#0000FF",
            arrowhead="white_diamond", arrowfoot="standard", line_type="dotted")
 
+# add a second edge between the same nodes
+g.add_edge('foo', 'foo1', label="EDGE 1", num="1")
+
 print(g.get_graph())
 
 print("\n\n\n")

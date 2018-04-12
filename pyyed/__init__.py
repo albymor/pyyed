@@ -197,10 +197,10 @@ class Node:
 
 class Edge:
     def __init__(self, node1, node2, label="", arrowhead="standard", arrowfoot="none",
-                 color="#000000", line_type="line", width="1.0"):
+                 color="#000000", line_type="line", width="1.0", num="0"):
         self.node1 = node1
         self.node2 = node2
-        self.edge_id = "%s_%s" % (node1, node2)
+        self.edge_id = "%s_%s_%s" % (node1, node2, num)
 
         self.label = label
 
@@ -311,7 +311,7 @@ class Graph:
 
     def add_edge(self, node1, node2, label="", arrowhead="standard", arrowfoot="none",
                  color="#000000", line_type="line",
-                 width="1.0"):
+                 width="1.0", num="0"):
         # pass node names, not actual node objects
 
         existing_entities = self.nodes_in_groups
@@ -324,7 +324,7 @@ class Graph:
         if node2 not in existing_entities:
             self.nodes[node2] = Node(node2)
 
-        edge = Edge(node1, node2, label, arrowhead, arrowfoot, color, line_type, width)
+        edge = Edge(node1, node2, label, arrowhead, arrowfoot, color, line_type, width, num)
         self.edges[edge.edge_id] = edge
 
     def add_group(self, group_id, **kwargs):

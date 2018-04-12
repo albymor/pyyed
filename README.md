@@ -29,6 +29,8 @@ The interface is similar to that of NetworkX:
     g.add_edge('foo', 'foo1', label="EDGE!", width="3.0", color="#0000FF", 
                arrowhead="white_diamond", arrowfoot="standard", line_type="dotted")
 
+    g.add_edge('foo', 'foo1', label="EDGE 1", num = "1" ) # add a second edge between the same nodes
+
     print g.get_graph()
     
 
